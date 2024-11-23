@@ -1,5 +1,8 @@
-
 const version = 'V1.0.2';
 
+function setHeader(headers, name, value) {
+    headers[name.toLowerCase()] = value;
+}
 
-function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
+setHeader($request.headers, "X-RevenueCat-ETag", "");
+$done({ headers: $request.headers });
